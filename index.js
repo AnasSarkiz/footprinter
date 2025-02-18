@@ -32660,7 +32660,9 @@ var pinrow_def = z.object({
   num_pins: z.number().optional().default(6),
   p: length.default("0.1in").describe("pitch"),
   id: length.default("1.0mm").describe("inner diameter"),
-  od: length.default("1.5mm").describe("outer diameter")
+  od: length.default("1.5mm").describe("outer diameter"),
+  male: z.boolean().optional().default(true).describe("for male pin headers"),
+  female: z.boolean().optional().default(false).describe("for female pin headers")
 });
 var pinrow = (raw_params) => {
   const parameters = pinrow_def.parse(raw_params);
